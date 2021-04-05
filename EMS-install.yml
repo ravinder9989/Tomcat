@@ -1,0 +1,17 @@
+---
+- hosts: webserver
+  become: true
+  tasks: 
+          
+      - name: Copying package
+        copy:
+           src: /home/ec2-user/ems
+           dest: /tmp/
+           
+      #- name: copy
+       # shell: cp -p /tmp/apache-tomcat-7.0.76.tar.gz /usr/local/
+          
+     
+      - name: Starting EMS 
+        shell: nohup /tmp/ems/TIBCOUniversalInstaller-ems.silent
+       # shell: nohup /usr/local/apache-tomcat-7.0.76/bin/shutdown.sh

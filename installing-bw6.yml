@@ -1,0 +1,9 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+    - name: Copying index file
+      copy: 
+         src: /home/ec2-user/TIB_BW_6.5.1_linux26gl23_x86_64.zip
+         dest: /home/ubuntu/TIB_BW_6.5.1_linux26gl23_x86_64.zip
+      
