@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-              git branch: 'main',url: "https://github.com/ravinder9989/Apache_ansible.git" 
+              git branch: 'main',url: "https://github.com/ravinder9989/Tomcat.git" 
               sh "ls -ll"
             }
         }
@@ -15,10 +15,10 @@ pipeline {
     }
     post {
             success {
-                mail to:"nandyalaravinder@gmail.com, sajjavenkey50@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+                mail to:"nandyalaravinder@gmail.com, ravinder.n@isteer.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
             }
             failure {
-                mail to:"nandyalaravinder@gmail.com, sajjavenkey50@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+                mail to:"nandyalaravinder@gmail.com, ravinder.n@isteer.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
             }
         }
 }
